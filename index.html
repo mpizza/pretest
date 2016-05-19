@@ -1,0 +1,174 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Pretest</title>
+    <style>
+      span.ans {
+        font-weight: bold;
+      }
+      section {
+        margin-left: 40px;
+        width: 80%;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #000; 
+      }
+      pre {
+        padding: 20px 0;
+        background: black;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h3>CSS -1 Please illustrate an image of CSS box model.</h3>
+      <span class = "ans"> Ans: </span> <br/>
+      <img src="box.png" />
+    </section>
+    <section>
+      <h3>CSS -2 How would you approach fixing browser-specific styling issues?
+        (Browser compatibility)
+      </h3>
+      <p>
+        <span class = "ans"> Ans: </span>
+        Firstly I will check with 
+        <a href="http://caniuse.com/" target = "_blank">caniuse.com</a> about the "Browser compatibility", make sure which CSS property need to add browser prefix (such as -moz-, -webkit-) or supported. Then I'll use tools likes <a href="http://lesscss.org/" targer = "_blank"> lesscss </a> or <a href="http://sass-lang.com/" target = "http://sass-lang.com/"> sass </a> to help me wrap css files.
+      </p>
+    </section>
+    <section>
+      <h3>CSS -3 What's the difference between inline and inline-block?
+      </h3>
+        <style>
+        a.q3 {
+          border: 5px solid #f00;
+          width: 100px;
+          height: 100px;
+        }
+        a.box {
+          margin-top: 20px;
+          display: inline-block;
+        }
+        </style>
+        <p> <span class = "ans"> Ans: </span> inline can't set width and height but inline-box can be rendered with width and height property. </p>
+        <a href="http://google.com" class="q3"> google (inline)</a> <br/>
+        <a href="http://google.com" class="q3 box"> google (inline-box)</a>
+    </section>
+     <section>
+      <h3>CSS -4 Given an image photo.jpg which is 100x100, can you add html and css (no js) so that when the user hovers over the right half, a right arrow appears and when the user hover over the left half, a left arrow appears?
+      </h3>
+      <style>
+        .google-icon {
+          position: relative;
+          width: 270px;
+        }
+        .google-icon .left,
+        .google-icon .right{
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          display: inline-block;
+          width: 50%;
+          height: 92px;
+          border: 1px solid #000;
+        }
+
+        .google-icon .right{
+          text-align: right;
+          left: 50%;
+        }
+
+        .google-icon p {
+           display: inline-block;
+           background: url("https://www.google.com.tw/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+           width: 270px;
+           height: 92px;
+           background-repeat: none;
+        }
+
+        .google-icon .left span,
+        .google-icon .right span{
+          visibility: hidden;
+        }
+
+        .google-icon .left:hover span,
+        .google-icon .right:hover span{
+          visibility: visible;
+        }
+
+      </style>
+      <span class="ans"> Ans: </span>
+      <div class="google-icon" >
+        <div class="left">
+          <span>«</span>
+        </div>
+        <p></p>
+        <div class="right">
+          <span>»</span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h3>JS -1 What's the difference between a variable that is: null, undefined or undeclared? and how would you go about checking for any of these states?
+      </h3>
+      <span class="ans"> Ans: </span>
+      <p>
+        "undefined" is a variable that has been declared but no value exists and is a type of itself ‘undefined’.
+      </p>
+      <p>
+       "null" is a value of a variable and is a type of object.
+      </p>
+      <p>
+        "undeclared" is a variable that has been declared without "var". In "use strict" mode, it would be occurred error.
+      </p>
+      <p> I'll use "typeof" to check "undefined" or "null". </p> 
+    </section>
+    <section>
+      <h3>JS -2 Could you explain what’s the favour(difference) of Linked List and Array ?
+      </h3>
+      <span class="ans"> Ans: </span>
+      <p>
+        Linked List has extra node for pointing next node, and it is more flexible to change the order. 
+      </p>
+      <pre>
+  var test = ['a', 'b', 'c'];
+  function linkNode(option) {
+    this.value = option.value;
+    this.next = option.next || null;
+  }
+
+  var node_a = new linkNode({value: 'a'}); 
+  var node_b = new linkNode({value: 'b'});
+  node_a.next = node_b;
+
+  console.log(node_a.value + "," + node_a.next.value);
+      <pre>
+    </section>
+    <section>
+      <h3>Coding -1 Implement a function that remove duplicate words (Javascript)
+      </h3>
+      <p>
+        input = "tony goes to park the park\npark, but is is, tire, tire\t tire"; <br/>
+output = "tony goes to park the park\n, but is , tire, \t ";
+      </p>
+    </section>
+    <section>
+      <h3>Coding -2 Find highest (max1) and second highest (max2) numbers from given array. (algorithm)
+      </h3>
+      <p>
+        input: [11, 70, 45, 33, 63, 85] <br/>
+        output: max1=85, max2=70
+      </p>
+      <span class="ans"> Ans: </span><a href="http://jsbin.com/cizuni/1/edit?js,console,output" target="_blank">JSBIN</a>
+      <pre>
+  var numbers = [11, 70, 45, 33, 63, 85]; numbers.sort(function(a, b) {
+    return b - a;
+  });
+  console.log(numbers[0], numbers[1]);
+      </pre>
+    </section>
+
+  </body>
+</html>
